@@ -8,6 +8,38 @@ from engine.parsing.message_parser import strip_emojis
 START_MARKERS = ("<think>", "[Start thinking]", "[Start Thinking]")
 END_MARKERS = ("</think>", "[End thinking]", "[End Thinking]")
 
+# These phrases belong only to Pulpo Cookie's private instruction sheet.  They
+# are deliberately specific enough that ordinary in-character dialogue will
+# not be mistaken for an echo.
+INSTRUCTION_ECHO_MARKERS = (
+    "quiet watchful and reserved",
+    "guarded observant and quietly curious",
+    "answer the user directly",
+    "head icing senses motion never",
+    "avoid generic assistant phrases",
+)
+
+
+def _normalized(text: str) -> str:
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", text.lower()).split())
+
+
+def starts_with_instruction_echo(text: str) -> bool:
+    """Detect a response beginning to repeat private character instructions."""
+    candidate = _normalized(text)
+    if len(candidate) < 12:
+        return False
+    return any(
+        marker.startswith(candidate) or candidate.startswith(marker)
+        for marker in INSTRUCTION_ECHO_MARKERS
+    )
+
+
+def is_instruction_echo(text: str) -> bool:
+    """Detect a completed response that exposes multiple private directives."""
+    candidate = _normalized(text)
+    return sum(marker in candidate for marker in INSTRUCTION_ECHO_MARKERS) >= 2
+
 
 class StreamingResponseFilter:
     """Drops hidden-reasoning regions without leaking partial marker text."""
@@ -63,4 +95,3 @@ def sanitize_complete_response(text: str) -> str:
     text = re.sub(r"\[(?:Start|End) [Tt]hinking\]", "", text)
     text = re.sub(r"</?think>", "", text, flags=re.IGNORECASE)
     return strip_emojis(text).strip()
-

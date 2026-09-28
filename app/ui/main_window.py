@@ -33,11 +33,12 @@ from engine.llm.backend import LlamaBackend
 from engine.llm.client import LlamaClient
 from engine.memory.database import Database
 from engine.parsing.message_parser import parse_message
+from engine.parsing.output_filter import is_instruction_echo
 from engine.perspective.knowledge import PerspectiveStore
 from engine.prompts.assembler import PromptAssembler
 from engine.relationships.engine import RelationshipEngine
 from engine.scene.state import SceneManager
-from engine.services.chat import ChatService
+from engine.services.chat import ChatService, PROMPT_LEAK_FALLBACK
 
 
 FIRST_MEETING_OPENING = (
@@ -114,7 +115,7 @@ class ChatWorker(QThread):
             for chunk in self.service.generate(self.text):
                 chunks.append(chunk)
                 self.token.emit(chunk)
-            self.completed.emit("".join(chunks))
+            self.completed.emit(self.service.last_visible_response or "".join(chunks))
         except Exception as exc:
             self.failed.emit(str(exc))
 
@@ -182,6 +183,7 @@ class MainWindow(QMainWindow):
         self.conversation_id = self.database.get_or_create_conversation()
         for conversation in self.database.list_conversations():
             self._seed_opening_if_needed(int(conversation["id"]))
+        self._replace_instruction_echoes()
         self.setWindowTitle("Pulpo Cookie")
         self.resize(1220, 800)
         self.setMinimumSize(980, 660)
@@ -406,6 +408,17 @@ class MainWindow(QMainWindow):
                 parse_message(FIRST_MEETING_OPENING),
                 self.scene.scene_id,
             )
+
+    def _replace_instruction_echoes(self) -> None:
+        """Remove any private instruction echo saved by an earlier model turn."""
+        for conversation in self.database.list_conversations():
+            for message in self.database.recent_messages(int(conversation["id"]), limit=100):
+                if message["speaker"] == "pulpo" and is_instruction_echo(message["raw_text"]):
+                    self.database.update_message(
+                        int(message["id"]),
+                        parse_message(PROMPT_LEAK_FALLBACK),
+                        self.scene.scene_id,
+                    )
 
     def _is_first_encounter(self) -> bool:
         messages = self.database.recent_messages(self.conversation_id, limit=100)
@@ -641,8 +654,12 @@ class MainWindow(QMainWindow):
         if not self._stream_buffer:
             self._stream_flush_timer.stop()
 
-    def _chat_complete(self, _: str) -> None:
+    def _chat_complete(self, final_text: str) -> None:
         self._flush_stream_buffer()
+        if self.active_pulpo_card and final_text:
+            # Replace the streamed draft with the final safe, sanitized text.
+            # This also clears any late-detected private-instruction echo.
+            self.active_pulpo_card.set_text(final_text)
         self.status_label.setText("●  Pulpo Cookie · Ready")
         self.input.setEnabled(True)
         self.send_button.setEnabled(True)

@@ -9,7 +9,11 @@ from engine.llm.client import LlamaClient
 from engine.memory.database import Database
 from engine.models import AnalysisResult
 from engine.parsing.message_parser import parse_message
-from engine.parsing.output_filter import sanitize_complete_response
+from engine.parsing.output_filter import (
+    is_instruction_echo,
+    sanitize_complete_response,
+    starts_with_instruction_echo,
+)
 from engine.prompts.assembler import PromptAssembler
 from engine.relationships.analyzer import PostTurnAnalyzer
 from engine.relationships.engine import RelationshipEngine
@@ -22,6 +26,11 @@ LOGGER = logging.getLogger(__name__)
 EMPTY_REPLY_FALLBACK = (
     "*Her head icing tilts toward you; a ribbon settles against the table.*\n\n"
     "...I'm here. Say it again."
+)
+
+PROMPT_LEAK_FALLBACK = (
+    "*Her head icing shifts toward you; one ribbon grows still.*\n\n"
+    "...Hello. I'm Pulpo Cookie. You are new here."
 )
 
 
@@ -45,8 +54,10 @@ class ChatService:
         self.analyzer = PostTurnAnalyzer(client, settings.relationship_analysis_max_tokens)
         self.conversation_id = conversation_id or database.get_or_create_conversation()
         self.last_debug: dict[str, Any] = {}
+        self.last_visible_response = ""
 
     def generate(self, user_text: str) -> Iterator[str]:
+        self.last_visible_response = ""
         parsed_user = parse_message(user_text)
         self.scene.observe_user_message(parsed_user)
         user_message_id = self.database.add_message(
@@ -61,17 +72,49 @@ class ChatService:
             self.conversation_id, parsed_user.semantic_text, relationship
         )
         chunks: list[str] = []
+        prefix = ""
+        has_streamed_visible_text = False
+        instruction_echo = False
         for chunk in self.client.stream_chat(messages):
+            if instruction_echo:
+                continue
+            if not has_streamed_visible_text:
+                prefix += chunk
+                if starts_with_instruction_echo(prefix):
+                    instruction_echo = True
+                    continue
+                # Hold only a few opening words. This prevents a private
+                # instruction echo from flashing in the UI, while ordinary
+                # replies still begin streaming almost immediately.
+                if len(prefix) < 24:
+                    continue
+                chunks.append(prefix)
+                yield prefix
+                prefix = ""
+                has_streamed_visible_text = True
+                continue
             chunks.append(chunk)
             yield chunk
+        if not instruction_echo and prefix:
+            chunks.append(prefix)
+            yield prefix
         visible = sanitize_complete_response("".join(chunks))
-        if not visible:
+        if instruction_echo or is_instruction_echo(visible):
+            LOGGER.warning("Model attempted to echo private character instructions.")
+            visible = PROMPT_LEAK_FALLBACK
+        elif not visible:
             # Some local models can exhaust their output budget inside a
             # hidden-thinking block. Never leave the user facing an empty
             # bubble; a brief in-character acknowledgement is better than
             # making them repeat themselves without explanation.
             LOGGER.warning("Model returned no visible reply; using Pulpo fallback.")
             visible = EMPTY_REPLY_FALLBACK
+        if not chunks:
+            # The opening safety check intentionally withholds a suspicious
+            # response. Stream the safe replacement so the bubble is never
+            # left showing only an ellipsis.
+            yield visible
+        self.last_visible_response = visible
         parsed_pulpo = parse_message(visible)
         self.database.add_message(
             self.conversation_id, "pulpo", parsed_pulpo, self.scene.scene_id
