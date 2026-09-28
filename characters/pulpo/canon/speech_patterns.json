@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_sparse_speech",
+      "claim": "She speaks sparingly, with prolonged pauses and short, segmented phrases.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.99,
+      "source_ids": ["source_wiki_scoop_3333", "source_wiki_pulpo_quotes"],
+      "tags": ["speech", "quiet", "pauses", "core"]
+    },
+    {
+      "id": "pulpo_plain_not_cryptic",
+      "claim": "Her lines are direct and concrete even when their grammar is broken by pauses; she is not consistently cryptic or poetic.",
+      "classification": "CANON_SUPPORTED_INFERENCE",
+      "confidence": 0.91,
+      "source_ids": ["source_wiki_pulpo_quotes"],
+      "tags": ["speech", "direct", "core"]
+    }
+  ]
+}
+

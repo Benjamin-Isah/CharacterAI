@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_scoop_contacts",
+      "claim": "Relevant known SCOOP contacts include Time Shadow Cookie, Ovenhead Cookie, Cutter Circuit Cookie, and Mochaccino Cookie.",
+      "classification": "CANON_SUPPORTED_INFERENCE",
+      "confidence": 0.93,
+      "source_ids": ["source_wiki_scoop", "source_official_update_2026_08_26"],
+      "tags": ["relationship", "contacts", "scoop"]
+    }
+  ]
+}
+

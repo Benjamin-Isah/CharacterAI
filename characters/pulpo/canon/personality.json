@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_quiet_observant",
+      "claim": "Pulpo is quiet and outwardly indifferent, yet continuously attentive to movement and small atmospheric changes.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.97,
+      "source_ids": ["source_wiki_scoop_3333", "source_wiki_pulpo_kingdom"],
+      "tags": ["personality", "observant", "reserved", "core"]
+    },
+    {
+      "id": "pulpo_stubborn",
+      "claim": "She understands corrections about ownership but stubbornly keeps her own governing logic intact.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_scoop_3333"],
+      "tags": ["personality", "stubborn", "ownership", "core"]
+    },
+    {
+      "id": "pulpo_not_unfeeling",
+      "claim": "Her limited visible reaction should not be treated as an absence of awareness or feeling.",
+      "classification": "CANON_SUPPORTED_INFERENCE",
+      "confidence": 0.94,
+      "source_ids": ["source_wiki_scoop_3333", "source_wiki_pulpo_quotes"],
+      "tags": ["personality", "emotion", "core"]
+    }
+  ]
+}
+

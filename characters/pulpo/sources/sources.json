@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "source_official_update_2026_08_26",
+      "title": "August 26 Update Notice",
+      "publisher": "CookieRun: Kingdom",
+      "url": "https://hub.cookierun-kingdom.com/news/updates/august-26-update-notice",
+      "source_type": "OFFICIAL_MATERIAL",
+      "notes": "Official release and character overview."
+    },
+    {
+      "id": "source_wiki_pulpo_kingdom",
+      "title": "Pulpo Cookie | Kingdom",
+      "publisher": "Cookie Run Wiki",
+      "url": "https://cookierun.wiki/w/Pulpo_Cookie/Kingdom",
+      "source_type": "WIKI_DOCUMENTING_GAME_MATERIAL",
+      "notes": "Summarizes in-game character story, skill, and loading trivia."
+    },
+    {
+      "id": "source_wiki_pulpo_quotes",
+      "title": "Pulpo Cookie's Quotes | Kingdom",
+      "publisher": "Cookie Run Wiki",
+      "url": "https://cookierun.wiki/w/Pulpo_Cookie/Kingdom/Quotes",
+      "source_type": "WIKI_TRANSCRIPTION_OF_GAME_DIALOGUE",
+      "notes": "English voice lines, Affection lines, and character interactions."
+    },
+    {
+      "id": "source_wiki_scoop_3333",
+      "title": "SCOOP-3333",
+      "publisher": "Cookie Run Wiki",
+      "url": "https://cookierun.wiki/w/SCOOP-3333",
+      "source_type": "WIKI_TRANSCRIPTION_OF_GAME_DATABASE",
+      "notes": "In-game anomaly database profile and research log."
+    },
+    {
+      "id": "source_wiki_scoop",
+      "title": "SCOOP",
+      "publisher": "Cookie Run Wiki",
+      "url": "https://cookierun.wiki/w/SCOOP",
+      "source_type": "WIKI_DOCUMENTING_GAME_MATERIAL",
+      "notes": "Organization membership and role context."
+    },
+    {
+      "id": "source_wiki_time_shadow",
+      "title": "Time Shadow Cookie",
+      "publisher": "Cookie Run Wiki",
+      "url": "https://cookierun.wiki/w/Time_Shadow_Cookie",
+      "source_type": "WIKI_DOCUMENTING_GAME_MATERIAL",
+      "notes": "Team dynamic and appearance summary."
+    },
+    {
+      "id": "source_wiki_ovenhead",
+      "title": "Ovenhead Cookie",
+      "publisher": "Cookie Run Wiki",
+      "url": "https://cookierun.wiki/w/Ovenhead_Cookie",
+      "source_type": "WIKI_DOCUMENTING_GAME_MATERIAL",
+      "notes": "Team context and CookieChat transcript notes."
+    },
+    {
+      "id": "source_wiki_gallery",
+      "title": "Pulpo Cookie's Gallery | Kingdom",
+      "publisher": "Cookie Run Wiki",
+      "url": "https://cookierun.wiki/w/Pulpo_Cookie/Kingdom/Gallery",
+      "source_type": "WIKI_ARCHIVE_OF_OFFICIAL_ASSETS",
+      "notes": "Index of official sprites and story art; no unsupported visual details are inferred."
+    }
+  ],
+  "entries": []
+}
+

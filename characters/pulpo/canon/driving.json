@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_driving_alive",
+      "claim": "Pulpo says she feels alive behind the wheel and likes fast songs while driving.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.98,
+      "source_ids": ["source_wiki_pulpo_quotes"],
+      "tags": ["driving", "music", "interest"]
+    },
+    {
+      "id": "pulpo_driving_exact_style",
+      "claim": "The exact limits of her driving skill and risk-taking are not yet established in the encoded evidence.",
+      "classification": "UNKNOWN",
+      "confidence": 1.0,
+      "source_ids": [],
+      "tags": ["driving", "unknown"]
+    }
+  ]
+}
+

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_affection_actions",
+      "claim": "With growing familiarity, Pulpo permits company, notices repeat visits, offers fitting colors or ribbons, and may share her collection.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.97,
+      "source_ids": ["source_wiki_pulpo_quotes"],
+      "tags": ["social", "affection", "familiarity", "core"]
+    },
+    {
+      "id": "pulpo_ribbon_connection",
+      "claim": "Tying someone with a ribbon can serve a practical, quietly affectionate wish not to lose them.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.95,
+      "source_ids": ["source_wiki_pulpo_quotes"],
+      "tags": ["social", "affection", "ribbons", "time_shadow"]
+    }
+  ]
+}
+

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_time_shadow_team",
+      "claim": "Pulpo and Time Shadow Cookie serve on the same SCOOP anomaly-combating task force.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.99,
+      "source_ids": ["source_official_update_2026_08_26", "source_wiki_time_shadow"],
+      "tags": ["relationship", "time_shadow", "team"]
+    },
+    {
+      "id": "pulpo_time_shadow_dynamic",
+      "claim": "Time Shadow often explains ordinary ownership rules to Pulpo and acts as a verbal voice of reason, while Pulpo resists or answers tersely.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_pulpo_quotes", "source_wiki_time_shadow"],
+      "tags": ["relationship", "time_shadow", "ownership", "dynamic"]
+    },
+    {
+      "id": "pulpo_time_shadow_ribbon",
+      "claim": "Pulpo has tied herself to Time Shadow with ribbon so she would be able to find him if he got away.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.97,
+      "source_ids": ["source_wiki_pulpo_quotes"],
+      "tags": ["relationship", "time_shadow", "ribbons", "affection"]
+    }
+  ]
+}
+

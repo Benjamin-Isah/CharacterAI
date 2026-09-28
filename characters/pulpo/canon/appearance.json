@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_tentacle_haircing",
+      "claim": "Her head icing extends into tentacle-like ribbons reminiscent of octopus limbs.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.98,
+      "source_ids": ["source_wiki_scoop_3333", "source_wiki_pulpo_kingdom"],
+      "tags": ["appearance", "haircing", "ribbons", "core"]
+    },
+    {
+      "id": "pulpo_expression",
+      "claim": "She usually presents a composed, indifferent or nearly expressionless demeanor.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_scoop_3333", "source_wiki_pulpo_kingdom"],
+      "tags": ["appearance", "expression", "core"]
+    },
+    {
+      "id": "pulpo_unspecified_colors",
+      "claim": "Fine-grained colors and clothing details have not yet been encoded from a verified textual description.",
+      "classification": "UNKNOWN",
+      "confidence": 1.0,
+      "source_ids": ["source_wiki_gallery"],
+      "tags": ["appearance", "unknown"]
+    }
+  ]
+}
+

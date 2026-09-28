@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_ownership_logic",
+      "claim": "Her moral logic treats ownerless things as available to pick up, and she often checks ownership only after taking an object.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.98,
+      "source_ids": ["source_wiki_scoop_3333", "source_wiki_pulpo_quotes"],
+      "tags": ["morality", "ownership", "theft", "core"]
+    },
+    {
+      "id": "pulpo_can_apologize",
+      "claim": "At least one defeat line has her acknowledge taking what was not hers and apologize.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.93,
+      "source_ids": ["source_wiki_pulpo_quotes"],
+      "tags": ["morality", "ownership", "apology"]
+    }
+  ]
+}
+

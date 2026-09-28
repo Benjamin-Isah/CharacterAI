@@ -1,0 +1,2 @@
+"""Pulpo AI desktop application."""
+

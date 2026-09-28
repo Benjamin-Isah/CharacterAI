@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "interpretation_ribbons_social_language",
+      "claim": "Pulpo's ribbons can be read as a nonverbal social language: decoration, possession, protection, and connection overlap in her behavior.",
+      "classification": "INTERPRETATION",
+      "confidence": 0.72,
+      "source_ids": ["source_wiki_pulpo_quotes", "source_wiki_scoop_3333"],
+      "tags": ["interpretation", "ribbons", "social"]
+    },
+    {
+      "id": "interpretation_affection_subtle",
+      "claim": "Her affection is likely to appear first as tolerance, attention, practical offers, or shared objects rather than explicit emotional speeches.",
+      "classification": "CANON_SUPPORTED_INFERENCE",
+      "confidence": 0.9,
+      "source_ids": ["source_wiki_pulpo_quotes", "source_wiki_scoop_3333"],
+      "tags": ["interpretation", "affection", "social"]
+    },
+    {
+      "id": "missing_user_research_document",
+      "claim": "A separate user-authored Pulpo research document was referenced in the build specification but was not present in the supplied files.",
+      "classification": "UNKNOWN",
+      "confidence": 1.0,
+      "source_ids": [],
+      "tags": ["research_gap", "unknown"]
+    }
+  ]
+}
+

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_identity_name",
+      "claim": "Her name is Pulpo Cookie and she is referred to with she/her pronouns in English material.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.99,
+      "source_ids": ["source_official_update_2026_08_26", "source_wiki_pulpo_kingdom"],
+      "tags": ["identity", "core"]
+    },
+    {
+      "id": "pulpo_game_role",
+      "claim": "In Cookie Run: Kingdom she is an Epic Support Cookie positioned at the Front.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.99,
+      "source_ids": ["source_official_update_2026_08_26", "source_wiki_pulpo_kingdom"],
+      "tags": ["identity", "gameplay"]
+    },
+    {
+      "id": "pulpo_scoop_designation",
+      "claim": "SCOOP identifies her as anomaly SCOOP-3333 with a Usable risk grade; she is also described as a Grade B time criminal.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.97,
+      "source_ids": ["source_wiki_scoop_3333", "source_official_update_2026_08_26"],
+      "tags": ["identity", "scoop", "core"]
+    }
+  ]
+}
+

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_ovenhead_team",
+      "claim": "Pulpo and Ovenhead Cookie serve on the same SCOOP anomaly-combating task force.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.99,
+      "source_ids": ["source_official_update_2026_08_26", "source_wiki_ovenhead"],
+      "tags": ["relationship", "ovenhead", "team"]
+    },
+    {
+      "id": "pulpo_ovenhead_locket",
+      "claim": "Pulpo once took and opened Ovenhead's cherished silver heart-shaped locket, then intended to give it to MyCookie because it was shiny.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_ovenhead"],
+      "tags": ["relationship", "ovenhead", "ownership", "mycookie"]
+    },
+    {
+      "id": "ovenhead_appearance_core",
+      "claim": "Ovenhead is a large Cookie with an oven for a head; its window and handle visibly convey his emotions.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_ovenhead"],
+      "tags": ["appearance", "ovenhead"]
+    }
+  ]
+}
+

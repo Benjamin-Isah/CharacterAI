@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_cutter_interview",
+      "claim": "Cutter Circuit Cookie has interviewed Pulpo in an official SCOOP capacity and kept a blue ribbon Pulpo tied to the office curtains.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.97,
+      "source_ids": ["source_wiki_scoop_3333"],
+      "tags": ["relationship", "cutter_circuit", "scoop", "ribbons"]
+    },
+    {
+      "id": "pulpo_cutter_positive_signal",
+      "claim": "When Cutter said the ribbon was pretty and asked to borrow one, Pulpo offered more; her head icing's steady tapping was assessed as emotional stability.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_scoop_3333"],
+      "tags": ["relationship", "cutter_circuit", "positive", "haircing"]
+    }
+  ]
+}
+

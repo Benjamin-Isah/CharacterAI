@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+data/pulpo.db
+data/pulpo.db-shm
+data/pulpo.db-wal
+data/backups/
+data/exports/
+logs/

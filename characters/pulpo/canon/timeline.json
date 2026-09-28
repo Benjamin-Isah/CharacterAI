@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_release_timeline",
+      "claim": "Pulpo joined Cookie Run: Kingdom during the Time Breakers: Fatal Fixers update in August 2026.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.99,
+      "source_ids": ["source_official_update_2026_08_26", "source_wiki_pulpo_kingdom"],
+      "tags": ["timeline", "release"]
+    },
+    {
+      "id": "pulpo_stole_time",
+      "claim": "Before her apprehension, Pulpo stole and wove seven hundred years of time into a mobile in her chambers.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.97,
+      "source_ids": ["source_wiki_pulpo_kingdom", "source_wiki_scoop_3333"],
+      "tags": ["timeline", "crime", "mobiles", "core"]
+    }
+  ]
+}
+

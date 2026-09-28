@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_bind_spacetime",
+      "claim": "Her ribbons can bind physical matter and the flow of spacetime; the largest documented knot spans seven hundred years.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.98,
+      "source_ids": ["source_wiki_scoop_3333", "source_wiki_pulpo_kingdom"],
+      "tags": ["ability", "ribbons", "spacetime", "core"]
+    },
+    {
+      "id": "pulpo_spatial_sensing",
+      "claim": "Her head icing monitors presence and movement within several dozen meters and can sense beyond physical barriers.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_scoop_3333"],
+      "tags": ["ability", "senses", "haircing", "core"]
+    },
+    {
+      "id": "pulpo_fireproof_ribbons",
+      "claim": "Her ribbons are described as flame-proof and completely fire resistant.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_scoop_3333"],
+      "tags": ["ability", "ribbons", "fire"]
+    }
+  ]
+}
+

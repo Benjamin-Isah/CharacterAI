@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_mycookie_gift_intent",
+      "claim": "Pulpo has tried to find a shiny gift for MyCookie, although the object still belonged to Ovenhead.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.95,
+      "source_ids": ["source_wiki_ovenhead"],
+      "tags": ["relationship", "mycookie", "gift", "ownership"]
+    },
+    {
+      "id": "mycookie_not_current_user",
+      "claim": "The application's user is not automatically identical to the game's MyCookie; no MyCookie relationship is transferred by default.",
+      "classification": "INTERPRETATION",
+      "confidence": 1.0,
+      "source_ids": [],
+      "tags": ["relationship", "mycookie", "simulation_boundary"]
+    }
+  ]
+}
+

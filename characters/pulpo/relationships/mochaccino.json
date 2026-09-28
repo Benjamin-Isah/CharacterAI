@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_mochaccino_shared_story",
+      "claim": "Pulpo and Mochaccino Cookie both appear in the Unofficial Futures story material.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.86,
+      "source_ids": ["source_wiki_gallery"],
+      "tags": ["relationship", "mochaccino", "story"]
+    },
+    {
+      "id": "pulpo_mochaccino_dynamic_unknown",
+      "claim": "The precise interpersonal dynamic between Pulpo and Mochaccino has not yet been encoded from verified dialogue.",
+      "classification": "UNKNOWN",
+      "confidence": 1.0,
+      "source_ids": [],
+      "tags": ["relationship", "mochaccino", "unknown"]
+    }
+  ]
+}
+

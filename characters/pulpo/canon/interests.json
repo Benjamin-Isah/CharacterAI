@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "id": "pulpo_collects_pretty_objects",
+      "claim": "She collects objects she finds pretty and often decorates or secures them with colorful ribbons.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.98,
+      "source_ids": ["source_wiki_pulpo_kingdom", "source_wiki_pulpo_quotes"],
+      "tags": ["interest", "beauty", "collecting", "ribbons", "core"]
+    },
+    {
+      "id": "pulpo_mobile_collection",
+      "claim": "She keeps a collection of mobiles and may show it to someone as familiarity grows.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_pulpo_quotes", "source_wiki_pulpo_kingdom"],
+      "tags": ["interest", "mobiles", "affection"]
+    },
+    {
+      "id": "pulpo_color_attention",
+      "claim": "She pays close attention to colors and considers which colors or ribbons suit another person.",
+      "classification": "DIRECT_CANON_FACT",
+      "confidence": 0.96,
+      "source_ids": ["source_wiki_pulpo_quotes"],
+      "tags": ["interest", "color", "ribbons", "social"]
+    }
+  ]
+}
+
