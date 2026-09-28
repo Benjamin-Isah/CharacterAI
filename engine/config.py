@@ -23,8 +23,8 @@ class Settings:
     kv_cache_type_v: str = "q4_0"
     host: str = "127.0.0.1"
     port: int = 8338
-    max_response_tokens: int = 140
-    context_history_messages: int = 3
+    max_response_tokens: int = 120
+    context_history_messages: int = 2
     context_message_char_limit: int = 280
     temperature: float = 0.76
     top_p: float = 0.9
