@@ -10,7 +10,7 @@ Double-click `PulpoAI.pyw`, or run:
 python launcher.py
 ```
 
-The first startup places the model on the GPU. The normal chat never requires a browser or a separately started server. Pulpo Cookie is tuned for quick, short in-character replies; it uses only the immediately relevant turn as live context, shows the first word immediately, and streams the rest smoothly into its bubble.
+The first startup places the model on the GPU. The normal chat never requires a browser or a separately started server. Pulpo Cookie is tuned for responsive, natural in-character replies; it uses the immediately relevant turns as live context, shows the first word immediately, and streams the rest smoothly into its bubble.
 
 ## Current milestone
 

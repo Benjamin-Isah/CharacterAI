@@ -14,6 +14,7 @@ from PySide6.QtWidgets import (
     QListWidget,
     QListWidgetItem,
     QMainWindow,
+    QMenu,
     QMessageBox,
     QPlainTextEdit,
     QPushButton,
@@ -228,6 +229,10 @@ class MainWindow(QMainWindow):
             Qt.ScrollBarPolicy.ScrollBarAlwaysOff
         )
         self.conversation_list.currentItemChanged.connect(self._conversation_selected)
+        self.conversation_list.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.conversation_list.customContextMenuRequested.connect(
+            self._conversation_context_menu
+        )
         rail_layout.addWidget(self.conversation_list, 1)
         rail_layout.addSpacing(12)
 
@@ -459,6 +464,21 @@ class MainWindow(QMainWindow):
         self._set_active_conversation(conversation_id)
 
     def _delete_active_conversation(self) -> None:
+        self._delete_conversation(self.conversation_id)
+
+    def _conversation_context_menu(self, position) -> None:
+        item = self.conversation_list.itemAt(position)
+        if item is None:
+            return
+        self.conversation_list.setCurrentItem(item)
+        conversation_id = int(item.data(Qt.ItemDataRole.UserRole))
+        menu = QMenu(self)
+        delete_action = menu.addAction("Delete this chat")
+        selected_action = menu.exec(self.conversation_list.mapToGlobal(position))
+        if selected_action == delete_action:
+            self._delete_conversation(conversation_id)
+
+    def _delete_conversation(self, conversation_id: int) -> None:
         if self.chat_worker and self.chat_worker.isRunning():
             QMessageBox.information(
                 self,
@@ -470,7 +490,7 @@ class MainWindow(QMainWindow):
             (
                 item
                 for item in self.database.list_conversations()
-                if int(item["id"]) == self.conversation_id
+                if int(item["id"]) == conversation_id
             ),
             None,
         )
@@ -487,7 +507,7 @@ class MainWindow(QMainWindow):
         )
         if choice != QMessageBox.StandardButton.Yes:
             return
-        if not self.database.delete_conversation(self.conversation_id):
+        if not self.database.delete_conversation(conversation_id):
             QMessageBox.warning(self, "Chat not found", "This chat was already removed.")
             self._refresh_conversation_list()
             return
@@ -498,6 +518,7 @@ class MainWindow(QMainWindow):
             else self.database.ensure_first_meeting_conversation()
         )
         self._set_active_conversation(replacement)
+        self.status_label.setText("●  Chat deleted")
 
     def _conversation_selected(
         self, current: QListWidgetItem | None, previous: QListWidgetItem | None

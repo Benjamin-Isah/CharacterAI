@@ -58,6 +58,14 @@ QPushButton#DeleteSceneButton:hover {
     border-color: #b76661;
 }
 QPushButton#DeleteSceneButton:pressed { background: #512b2f; }
+QMenu {
+    background: #10242a;
+    border: 1px solid #36575d;
+    border-radius: 8px;
+    padding: 5px;
+}
+QMenu::item { color: #efc1b8; padding: 8px 28px 8px 12px; border-radius: 5px; }
+QMenu::item:selected { background: #452a2d; }
 QLabel#SectionLabel {
     color: #5e7b80;
     font-size: 9px;

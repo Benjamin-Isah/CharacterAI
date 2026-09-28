@@ -23,11 +23,11 @@ class Settings:
     kv_cache_type_v: str = "q4_0"
     host: str = "127.0.0.1"
     port: int = 8338
-    max_response_tokens: int = 72
-    context_history_messages: int = 2
+    max_response_tokens: int = 140
+    context_history_messages: int = 3
     context_message_char_limit: int = 280
-    temperature: float = 0.64
-    top_p: float = 0.85
+    temperature: float = 0.76
+    top_p: float = 0.9
     startup_timeout_seconds: int = 180
     # A second model pass after every reply makes the interface appear to hang.
     # It remains opt-in for anyone who wants experimental auto-analysis.
