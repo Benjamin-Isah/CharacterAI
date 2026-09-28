@@ -17,7 +17,7 @@ The first startup places the model on the GPU. The normal chat never requires a 
 - Native PySide6 desktop window with streaming chat and a first-meeting scene opener
 - Automatic hidden `llama-server` lifecycle management
 - Saved-scene browser: start new conversations, return to earlier transcripts, or delete a selected chat with confirmation
-- Qwen3.5-9B Q4_K_M with GPU offload, flash attention, a 4096-token context, compact KV cache, and tuned CPU workers
+- Qwen3.5-9B Q4_K_M with GPU offload, flash attention, a focused 3072-token context, compact KV cache, and tuned CPU workers
 - Reasoning disabled with current llama.cpp flags, plus a display/storage safety filter
 - Evidence-classified Pulpo canon files and relevance-based prompt assembly
 - Persistent conversations, memory, scene, relationship history, and per-character knowledge

@@ -15,7 +15,7 @@ class Settings:
     model_quant: str = "Q4_K_M"
     # Pulpo Cookie's live conversation needs a short, quick context—not a large
     # multi-user server window.  This leaves more VRAM bandwidth for generation.
-    context_size: int = 4096
+    context_size: int = 3072
     gpu_layers: str = "99"
     generation_threads: int = 8
     prompt_threads: int = 16
@@ -23,11 +23,11 @@ class Settings:
     kv_cache_type_v: str = "q4_0"
     host: str = "127.0.0.1"
     port: int = 8338
-    max_response_tokens: int = 120
-    context_history_messages: int = 2
-    context_message_char_limit: int = 280
-    temperature: float = 0.76
-    top_p: float = 0.9
+    max_response_tokens: int = 80
+    context_history_messages: int = 1
+    context_message_char_limit: int = 220
+    temperature: float = 0.6
+    top_p: float = 0.85
     startup_timeout_seconds: int = 180
     # A second model pass after every reply makes the interface appear to hang.
     # It remains opt-in for anyone who wants experimental auto-analysis.
